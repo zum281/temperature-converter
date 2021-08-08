@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Alert from "@material-ui/lab/Alert";
 import {
     Paper,
