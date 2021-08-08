@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Alert from "@material-ui/lab/Alert";
 import {
     Paper,
@@ -18,13 +19,20 @@ const useStyles = makeStyles((theme) => {
         },
         form: {
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             gap: "10px",
+            [theme.breakpoints.up("sm")]: {
+                flexDirection: "row",
+            },
+        },
+        input: {
+            width: "200px",
         },
 
         select: {
-            minWidth: "200px",
+            width: "200px",
         },
         alert: {
             marginTop: theme.spacing(2),
@@ -86,6 +94,7 @@ const Calculator = () => {
                     label="Degrees"
                     InputProps={inputNumberProps}
                     value={degrees}
+                    className={classes.input}
                     onChange={(event) =>
                         setDegrees(parseFloat(event.target.value))
                     }
